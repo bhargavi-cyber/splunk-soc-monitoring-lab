@@ -62,13 +62,32 @@ Alert details:
 
 ## Repository Structure
 
+```
 splunk-soc-monitoring-lab
 ├── docs
+│   ├── splunk-architecture.md
+│   ├── splunk-data-ingestion.md
+│   ├── splunk-search-and-fields.md
+│   ├── splunk-spl-commands.md
+│   ├── splunk-transforming-commands.md
+│   └── splunk-reports-dashboards.md
+│
 ├── project
+│   ├── project-overview.md
+│   ├── dashboard-design.md
+│   └── alert-logic.md
+│
 ├── queries
+│   ├── data-exploration.spl
+│   ├── failure-detection.spl
+│   ├── host-activity-monitoring.spl
+│   ├── partner-failure-analysis.spl
+│   └── success-rate-monitoring.spl
+│
 ├── screenshots
+│
 └── README.md
-
+```
 ## Skills Demonstrated
 
 - Splunk log analysis
