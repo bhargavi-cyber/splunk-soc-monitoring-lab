@@ -43,7 +43,7 @@ This query calculates the percentage of successful calls for each partner and fi
 
 ### Screenshot
 
-<img src="../screenshots/06-alert-logic-query.png" width="750">
+<img src="https://github.com/bhargavi-cyber/splunk-soc-monitoring-lab/blob/e3e39dbf7248996c41af32475d66a8c3962bf744/06-alert-logic-query.png" width="750">
 
 ---
 
@@ -66,7 +66,7 @@ When the alert triggers, predefined actions are executed.
 
 ### Screenshot
 
-<img src="../screenshots/07-alert-actions-configuration.png" width="750">
+<img src="https://github.com/bhargavi-cyber/splunk-soc-monitoring-lab/blob/e3e39dbf7248996c41af32475d66a8c3962bf744/07-alert-actions-configuration.png" width="750">
 
 | Action | Description |
 |------|-------------|
@@ -81,6 +81,6 @@ The final alert configuration confirms that the detection logic is active and sc
 
 ### Screenshot
 
-<img src="../screenshots/08-alert-summary.png" width="750">
+<img src="https://github.com/bhargavi-cyber/splunk-soc-monitoring-lab/blob/e3e39dbf7248996c41af32475d66a8c3962bf744/08-alert-summary.png" width="750">
 
 This alert enables automated monitoring and helps analysts detect abnormal drops in system performance without manually checking dashboards.
