@@ -1,60 +1,44 @@
-# Splunk Search Processing Language (SPL)
+# Searching and Fields in Splunk
 
-SPL is used to retrieve and analyze data in Splunk.
+Fields provide structure to raw machine data and allow efficient searching.
 
 ---
 
-## SPL Search Pipeline
+## Search Workflow
 
 ```
-Search Terms
+Search Query
      │
      ▼
-Command
+Field Extraction
      │
      ▼
-Transformation
-     │
-     ▼
-Results
+Filtered Results
 ```
 
 ---
 
-## SPL Components
+## Metadata Fields
 
-| Component    | Purpose                      |
-| ------------ | ---------------------------- |
-| Search Terms | Retrieve events              |
-| Commands     | Process results              |
-| Functions    | Perform calculations         |
-| Arguments    | Provide parameters           |
-| Clauses      | Define grouping and renaming |
-
----
-
-## Common SPL Commands
-
-| Command | Purpose                   |
-| ------- | ------------------------- |
-| fields  | Include or exclude fields |
-| table   | Display results as table  |
-| rename  | Rename fields             |
-| sort    | Sort results              |
-| dedupe  | Remove duplicate events   |
+| Field      | Purpose              |
+| ---------- | -------------------- |
+| host       | Source machine       |
+| source     | File or log location |
+| sourcetype | Format of data       |
+| index      | Storage location     |
 
 ---
 
-## Example SPL Query
+## Field Categories
 
-```
-index=main sourcetype=eventgen
-| stats count by partner
-```
+| Category           | Description                 |
+| ------------------ | --------------------------- |
+| Selected Fields    | Always shown in results     |
+| Interesting Fields | Frequently appearing fields |
+| All Fields         | Complete field list         |
 
 ---
 
 ## Summary
 
-SPL enables analysts to retrieve, transform, and analyze log data efficiently.
-
+Fields allow Splunk to organize machine data and make searches more efficient.
