@@ -1,107 +1,88 @@
 # Splunk Architecture
 
-Splunk processes and analyzes machine data using a distributed architecture composed of several core components. 
+Splunk processes machine data using a distributed architecture that consists of several core components responsible for collecting, indexing, and searching data.
 
-## Splunk Data Flow Architecture
+---
+
+## Architecture Overview
 
 ```
-        +--------------------+
-        |   Log Sources      |
-        | (Servers / Apps)   |
-        +---------+----------+
-                  |
-                  v
-        +--------------------+
-        | Universal Forwarder|
-        |  (Collects Logs)   |
-        +---------+----------+
-                  |
-                  v
-        +--------------------+
-        |      Indexer       |
-        | (Parses & Stores)  |
-        +---------+----------+
-                  |
-                  v
-        +--------------------+
-        |    Search Head     |
-        | (Runs SPL Queries) |
-        +---------+----------+
-                  |
-                  v
-        +--------------------+
-        | Dashboards / Alerts|
-        |  Visualization     |
-        +--------------------+
+Log Sources
+     │
+     ▼
+Forwarder
+     │
+     ▼
+Indexer
+     │
+     ▼
+Search Head
+     │
+     ▼
+Dashboards & Alerts
 ```
 
-## Splunk Instance
+This pipeline shows how log data travels through the Splunk system before becoming searchable insights.
 
-A Splunk instance is a running installation of Splunk software on a machine.
-After configuration, the instance performs different roles in the Splunk environment.
+---
 
-## Core Processing Components
+## Core Splunk Components
 
-### Forwarder
+| Component   | Role            | Description                                            |
+| ----------- | --------------- | ------------------------------------------------------ |
+| Forwarder   | Data Collection | Collects log data from machines and sends it to Splunk |
+| Indexer     | Data Processing | Processes raw logs into searchable events              |
+| Search Head | Data Analysis   | Runs search queries and generates results              |
+| Dashboards  | Visualization   | Displays insights and monitoring metrics               |
 
-Forwarders collect log data from source machines and send it to Splunk for processing.
+---
 
-Two types of forwarders exist:
+## Forwarders
 
-**Universal Forwarder**
+Forwarders collect data from systems and send it to the indexer.
 
-* Lightweight agent
-* Collects and forwards data only
-* Installed on source hosts
+### Types of Forwarders
 
-**Heavy Forwarder**
+| Type                | Description                                                |
+| ------------------- | ---------------------------------------------------------- |
+| Universal Forwarder | Lightweight agent that only collects and forwards data     |
+| Heavy Forwarder     | Full Splunk instance capable of parsing and filtering data |
 
-* Full Splunk Enterprise instance
-* Can parse and filter data before forwarding
+---
 
-### Indexer
+## Indexer Responsibilities
 
-Indexers receive data from forwarders and process it into searchable events.
+The indexer performs several tasks when processing incoming logs.
 
-Responsibilities of an indexer include:
+| Task                 | Description                                     |
+| -------------------- | ----------------------------------------------- |
+| Event Breaking       | Splits raw data into individual events          |
+| Metadata Assignment  | Adds host, source, sourcetype, and index fields |
+| Timestamp Extraction | Determines when events occurred                 |
+| Storage              | Stores events in searchable indexes             |
 
-* Breaking raw data into events
-* Extracting metadata fields
-* Assigning timestamps
-* Storing indexed data on disk
+---
 
-### Search Head
+## Data Storage Buckets
 
-The search head is the interface where users perform searches, create dashboards, and analyze data.
+Splunk stores indexed data in buckets that represent stages in the data lifecycle.
 
-Search heads send search queries to indexers and combine the results for display.
+| Bucket | Description                 |
+| ------ | --------------------------- |
+| Hot    | Actively receiving new data |
+| Warm   | Recently indexed data       |
+| Cold   | Older but searchable data   |
+| Frozen | Archived or deleted data    |
+| Thawed | Restored data for searching |
 
-## Data Storage (Buckets)
-
-Splunk stores indexed data in buckets that represent different stages of the data lifecycle.
-
-Hot Bucket
-Data actively being written.
-
-Warm Bucket
-Recently indexed data.
-
-Cold Bucket
-Older searchable data stored in long-term storage.
-
-Frozen Bucket
-Data archived or deleted.
-
-Thawed Bucket
-Frozen data restored for searching.
-
-
+---
 
 ## Summary
 
-The main components of Splunk architecture are:
+Splunk architecture consists of three main processing components:
 
 * Forwarders (data collection)
 * Indexers (data processing and storage)
-* Search Heads (data searching and visualization)
+* Search Heads (searching and visualization)
 
+Together they enable organizations to analyze machine data and detect operational or security issues efficiently.
