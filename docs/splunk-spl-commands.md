@@ -1,52 +1,54 @@
-# Transforming Commands in Splunk
+# Splunk Search Processing Language (SPL)
 
-Transforming commands convert raw events into structured statistical tables.
+SPL is used to search, filter, and analyze data in Splunk.
 
 ---
 
-## Data Transformation Workflow
+## SPL Search Pipeline
 
 ```
-Raw Events
+Search Terms
      │
      ▼
-Transforming Command
+Command
      │
      ▼
-Statistics Table
+Transformation
      │
      ▼
-Visualization
+Results
 ```
 
 ---
 
-## Common Transforming Commands
+## SPL Components
 
-| Command | Purpose                    |
-| ------- | -------------------------- |
-| stats   | Generate statistics        |
-| top     | Show most frequent values  |
-| rare    | Show least frequent values |
-| table   | Display selected fields    |
-
----
-
-## Statistics Functions
-
-| Function | Description          |
-| -------- | -------------------- |
-| count    | Counts events        |
-| dc       | Counts unique values |
-| sum      | Calculates total     |
-| avg      | Calculates average   |
+| Component    | Purpose                     |
+| ------------ | --------------------------- |
+| Search Terms | Retrieve events             |
+| Commands     | Process results             |
+| Functions    | Perform calculations        |
+| Arguments    | Provide parameters          |
+| Clauses      | Define grouping or renaming |
 
 ---
 
-## Example
+## Common SPL Commands
+
+| Command | Purpose                         |
+| ------- | ------------------------------- |
+| fields  | Include or exclude fields       |
+| table   | Display results in table format |
+| rename  | Rename fields                   |
+| sort    | Sort results                    |
+| dedupe  | Remove duplicate events         |
+
+---
+
+## Example Query
 
 ```
-index=main
+index=main sourcetype=eventgen
 | stats count by partner
 ```
 
@@ -54,5 +56,4 @@ index=main
 
 ## Summary
 
-Transforming commands summarize large datasets and enable visualizations.
-
+SPL enables analysts to retrieve, process, and visualize machine data using a pipeline-based query language.
