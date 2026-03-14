@@ -45,7 +45,7 @@ This query ranks devices and IP addresses based on the number of failed call eve
 
 ### Screenshot
 
-<img src="../screenshots/05-device-failure-analysis.png" width="750">
+<img src="../05-device-failure-analysis.png" width="750">
 
 This analysis helps analysts identify:
 
@@ -72,7 +72,7 @@ The dashboard aggregates multiple panels to visualize key metrics in a single vi
 
 ### Screenshot
 
-<img src="../screenshots/04-dashboard-overview.png" width="750">
+<img src="..04-dashboard-overview.png" width="750">
 
 The dashboard allows analysts to quickly observe:
 
