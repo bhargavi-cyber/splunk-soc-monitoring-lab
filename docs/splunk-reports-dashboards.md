@@ -1,54 +1,46 @@
-# Searching and Fields in Splunk
+# Reports and Dashboards in Splunk
 
-Fields help structure raw machine data and make searches faster and more efficient.
+Reports and dashboards allow analysts to visualize insights and monitor system activity.
 
 ---
 
-## Search Workflow
+## Visualization Workflow
 
 ```
 Search Query
      │
      ▼
-Field Extraction
+Saved Report
      │
      ▼
-Filtered Results
+Dashboard Panel
+     │
+     ▼
+Monitoring Dashboard
 ```
 
 ---
 
-## Metadata Fields
+## Knowledge Objects
 
-| Field      | Purpose             |
-| ---------- | ------------------- |
-| host       | Source machine      |
-| source     | File or data source |
-| sourcetype | Format of data      |
-| index      | Storage location    |
-
----
-
-## Field Types
-
-| Field Category     | Description                        |
-| ------------------ | ---------------------------------- |
-| Selected Fields    | Always shown in results            |
-| Interesting Fields | Frequently appearing fields        |
-| All Fields         | Complete list of fields in dataset |
+| Object     | Purpose                   |
+| ---------- | ------------------------- |
+| Reports    | Saved searches            |
+| Dashboards | Visual display of reports |
+| Alerts     | Automated notifications   |
 
 ---
 
-## Field Extraction Types
+## Dashboard Panels
 
-| Type        | Description                |
-| ----------- | -------------------------- |
-| Index-time  | Extracted during indexing  |
-| Search-time | Extracted during searches  |
-| Ad-hoc      | Temporary field extraction |
+| Panel Type      | Description                     |
+| --------------- | ------------------------------- |
+| Inline Panel    | Search created inside dashboard |
+| Report Panel    | Uses saved report               |
+| Pre-built Panel | Preconfigured visualization     |
 
 ---
 
 ## Summary
 
-Fields provide structure to raw logs and enable efficient searching and analysis.
+Reports store search results while dashboards present data visually for monitoring and analysis.
