@@ -1,1 +1,10 @@
+# Partner Failure Analysis
+# Purpose:
+# This query identifies which partners generate the most failures.
 
+index=main sourcetype="eventgen" callResult=Failure
+| top partner
+
+# Outcome:
+# Displays the partners responsible for the highest number of failed events.
+# Useful for identifying problematic service providers.
