@@ -72,7 +72,7 @@ The dashboard aggregates multiple panels to visualize key metrics in a single vi
 
 ### Screenshot
 
-<img src="..04-dashboard-overview.png" width="750">
+<img src="../04-dashboard-overview.png" width="750">
 
 The dashboard allows analysts to quickly observe:
 
