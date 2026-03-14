@@ -1,1 +1,12 @@
+# Success Rate Monitoring
+# Purpose:
+# This query calculates the call success percentage for each partner.
 
+index=main sourcetype="eventgen"
+| stats count(responseCode) as totalAttempts
+count(eval(callResult="Success")) as totalSuccess by partner
+| eval callSuccessPercentage=(totalSuccess/totalAttempts)*100
+
+# Outcome:
+# Calculates the success rate of calls for each partner.
+# Helps detect abnormal drops in service performance.
