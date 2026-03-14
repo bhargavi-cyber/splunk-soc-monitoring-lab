@@ -35,7 +35,7 @@ A monitoring dashboard was created in Splunk to visualize failure trends and sys
 
 ### Screenshot
 
-<img src="screenshots/04-dashboard-overview.png" width="750">
+<img src="04-dashboard-overview.png" width="750">
 
 The dashboard contains multiple panels that highlight important metrics for monitoring system behavior.
 
@@ -58,7 +58,7 @@ During analysis, the dataset was filtered to identify devices and IP addresses g
 
 ### Screenshot
 
-<img src="screenshots/05-device-failure-analysis.png" width="750">
+<img src="05-device-failure-analysis.png" width="750">
 
 This analysis helps identify:
 
@@ -78,7 +78,7 @@ To detect abnormal behavior automatically, an alert was configured to monitor ca
 
 ### Screenshot
 
-<img src="screenshots/06-alert-logic-query.png" width="750">
+<img src="06-alert-logic-query.png" width="750">
 
 If the success rate drops below the defined threshold, the alert triggers and records the event.
 
