@@ -1,69 +1,98 @@
 # Splunk SOC Monitoring Lab
 
-This project demonstrates how Splunk can be used to monitor log data,
-detect failures, and generate alerts using SPL queries.
+This project demonstrates how Splunk can be used to analyze log data, detect failures, visualize system activity, and generate automated alerts using SPL queries.
 
-The project includes:
+The lab simulates a monitoring workflow similar to what analysts perform in a Security Operations Center (SOC).
 
-- Data exploration using SPL
-- Failure detection analysis
-- Dashboard visualizations
-- Automated alert configuration
+---
 
-## Splunk Architecture
+## Project Workflow
 
-The lab demonstrates the core Splunk architecture components:
+```
+Log Events
+    │
+    ▼
+Data Exploration
+    │
+    ▼
+Failure Detection
+    │
+    ▼
+Failure Pattern Analysis
+    │
+    ▼
+Monitoring Dashboard
+    │
+    ▼
+Automated Alert Detection
+```
 
-- Forwarder
-- Indexer
-- Search Head
-- Buckets (Hot, Warm, Cold)
+---
 
-Documentation is available in:
+## Dashboard Overview
 
-docs/splunk-architecture.md
+A monitoring dashboard was created in Splunk to visualize failure trends and system activity.
 
-## SPL Queries
+### Screenshot
 
-Key SPL queries used in this project:
+<img src="screenshots/04-dashboard-overview.png" width="750">
 
-- Data exploration
-- Failure detection
-- Partner failure analysis
-- Host activity monitoring
-- Success rate monitoring
+The dashboard contains multiple panels that highlight important metrics for monitoring system behavior.
 
-Queries are available in the `queries/` directory.
+| Panel | Purpose |
+|------|--------|
+| Failures by User | Displays failed call activity grouped by device |
+| Total Calls by Host | Shows call activity trends across hosts |
+| Failure Visualization | Displays total number of network failures |
+| Failures by Partner | Identifies partners generating the most failures |
 
-## Monitoring Dashboard
+To learn how the dashboard was designed, see:
 
-A dashboard was created to visualize system activity.
+➡ **[Dashboard Design](project/dashboard-design.md)**
 
-Panels include:
+---
 
-- Failures by User
-- Total Calls by Host
-- Total Network Failures
-- Failures by Partner
+## Failure Analysis
 
-<img src="screenshots/04-dashboard-overview.png" width="700">
+During analysis, the dataset was filtered to identify devices and IP addresses generating the most failures.
 
-## Alert Configuration
+### Screenshot
 
-An alert was configured to detect when call success rate drops below threshold.
+<img src="screenshots/05-device-failure-analysis.png" width="750">
 
-Alert details:
+This analysis helps identify:
 
-- Runs every hour
-- Trigger condition: success rate below threshold
-- Action: Add to triggered alerts
+- problematic devices
+- abnormal system activity
+- potential service issues
 
-<img src="screenshots/06-alert-creation.png" width="700">
+More detailed investigation steps are available here:
+
+➡ **[Project Investigation Workflow](project/project-overview.md)**
+
+---
+
+## Automated Alert Detection
+
+To detect abnormal behavior automatically, an alert was configured to monitor call success rates.
+
+### Screenshot
+
+<img src="screenshots/06-alert-logic-query.png" width="750">
+
+If the success rate drops below the defined threshold, the alert triggers and records the event.
+
+Detailed explanation of the alert logic is available here:
+
+➡ **[Alert Logic](project/alert-logic.md)**
+
+---
 
 ## Repository Structure
 
 ```
 splunk-soc-monitoring-lab
+│
 ├── docs
 │   ├── splunk-architecture.md
 │   ├── splunk-data-ingestion.md
@@ -88,10 +117,28 @@ splunk-soc-monitoring-lab
 │
 └── README.md
 ```
+
+---
+
 ## Skills Demonstrated
 
-- Splunk log analysis
-- SPL query writing
-- Dashboard creation
-- Alert configuration
-- Data visualization
+| Skill | Description |
+|------|-------------|
+| Log Analysis | Investigating system logs using SPL queries |
+| SPL Query Writing | Creating searches to filter and analyze data |
+| Dashboard Creation | Visualizing system activity with Splunk dashboards |
+| Alert Configuration | Detecting abnormal behavior automatically |
+| Data Visualization | Using charts and metrics to monitor failures |
+
+---
+
+## Key Takeaway
+
+This project demonstrates how Splunk can be used to transform raw machine data into actionable monitoring insights.
+
+The workflow implemented in this lab mirrors how SOC analysts:
+
+- investigate log data
+- detect abnormal patterns
+- visualize system activity
+- automate monitoring with alerts
