@@ -1,1 +1,15 @@
 
+# Data Exploration Query
+# Purpose:
+# This query retrieves events from the dataset to understand the structure
+# of the logs and identify useful fields for analysis.
+
+index=main sourcetype="eventgen"
+
+# Outcome:
+# This query helps identify important fields such as:
+# - partner
+# - nodeName
+# - deviceMAC
+# - callResult
+# - responseCode
