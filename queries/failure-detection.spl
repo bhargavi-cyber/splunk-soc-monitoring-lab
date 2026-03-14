@@ -1,1 +1,9 @@
+# Failure Detection Query
+# Purpose:
+# This query identifies failed call events in the dataset.
 
+index=main sourcetype="eventgen" callResult=Failure
+
+# Outcome:
+# Displays all events where the call result indicates a failure.
+# This helps analysts investigate potential service disruptions.
